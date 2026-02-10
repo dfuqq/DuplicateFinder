@@ -1,0 +1,14 @@
+"choose_folder" = "Выбрать папку";
+"scan" = "Сканировать";
+"cancel" = "Отмена";
+"select_folder_first" = "Сначала выберите папку";
+"collected_files" = "Собрано %d файлов";
+"no_files_found" = "Файлы не найдены";
+"hashing_candidates" = "Хеширую %d кандидатов...";
+"done_found_groups" = "Готово. Найдено %d групп дубликатов.";
+"reveal" = "Показать";
+"trash" = "В корзину";
+"group_files" = "Группа — %d файлов";
+"scanning" = "Сканирование...";
+"cancelled" = "Отменено";
+"error_occurred" = "Ошибка: %@";

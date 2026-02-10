@@ -20,8 +20,15 @@ struct ContentView: View {
           Text(url.path).lineLimit(1)
         }
         Spacer()
-        Text(vm.progressText).foregroundColor(.secondary)
-        Button(vm.isScanning ? NSLocalizedString("cancel", comment: "") : NSLocalizedString("scan", comment: "")) {
+        if vm.isScanning {
+          ProgressView().scaleEffect(0.9)
+          Text(NSLocalizedString("scanning", comment: ""))
+            .foregroundColor(.secondary)
+        } else {
+          Text(vm.progressText).foregroundColor(.secondary)
+        }
+        
+        Button(action: {
           if vm.isScanning {
             vm.cancel()
           } else {
@@ -31,8 +38,12 @@ struct ContentView: View {
             }
             vm.scan(folder: folder)
           }
+        }) {
+          Text(vm.isScanning ? NSLocalizedString("cancel", comment: "") : NSLocalizedString("scan", comment: ""))
         }
         .keyboardShortcut("s", modifiers: [.command])
+        .buttonStyle(.borderedProminent)
+        .tint(vm.isScanning ? Color.yellow : Color.green)
       }
       .padding()
       
@@ -51,13 +62,15 @@ struct ContentView: View {
                 Button(NSLocalizedString("reveal", comment: "")) {
                   NSWorkspace.shared.activateFileViewerSelecting([file.url])
                 }
-                .buttonStyle(BorderlessButtonStyle())
+                .buttonStyle(.bordered)
+                .tint(.blue)
                 Button(NSLocalizedString("trash", comment: "")) {
                   if vm.moveToTrash(file.url) {
                     vm.removeLocally(file: file, from: group)
                   }
                 }
-                .buttonStyle(BorderlessButtonStyle())
+                .buttonStyle(.bordered)
+                .tint(.red)
               }
             }
           }
@@ -79,7 +92,6 @@ struct ContentView: View {
     }
   }
 }
-
 
 #Preview {
     ContentView()
