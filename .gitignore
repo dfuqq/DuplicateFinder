@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+build/
+DerivedData/
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.xcuserdatad
+
+# Xcode - project user files
+*.xcuserdatad/
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Package.resolved
+.swiftpm
+
+# CocoaPods / Carthage / SPM artifacts
+Pods/
+Carthage/
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Archives, exports, builds
+*.ipa
+*.app
+*.dSYM
+*.pkg
+
+# IDEs
+.vscode/
+.idea/
+
+# temporary files
+*.swp
+*~.nib
+*.log
+
+# System files
+.Trashes
+Thumbs.db
+
