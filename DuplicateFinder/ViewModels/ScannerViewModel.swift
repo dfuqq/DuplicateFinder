@@ -96,14 +96,4 @@ final class ScannerViewModel: ObservableObject {
       }
     }
   }
-  
-  func moveToTrash(_ url: URL) -> Bool {
-    do {
-      try FileManager.default.trashItem(at: url, resultingItemURL: nil)
-      return true
-    } catch {
-      print("Trash error:", error)
-      return false
-    }
-  }
 }

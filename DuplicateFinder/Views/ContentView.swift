@@ -64,13 +64,6 @@ struct ContentView: View {
                 }
                 .buttonStyle(.bordered)
                 .tint(.blue)
-                Button(NSLocalizedString("trash", comment: "")) {
-                  if vm.moveToTrash(file.url) {
-                    vm.removeLocally(file: file, from: group)
-                  }
-                }
-                .buttonStyle(.bordered)
-                .tint(.red)
               }
             }
           }
