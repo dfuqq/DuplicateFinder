@@ -102,6 +102,7 @@ final class ScannerViewModel: ObservableObject {
       try FileManager.default.trashItem(at: url, resultingItemURL: nil)
       return true
     } catch {
+      print("Trash error:", error)
       return false
     }
   }
